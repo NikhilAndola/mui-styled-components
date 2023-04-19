@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import { Box, styled } from '@mui/material';
-
+import { Box, styled, ThemeProvider } from '@mui/material';
+import theme from './Theme';
 import MuiAppBar from '@material-ui/core/AppBar';
 
 export default function App() {
@@ -54,10 +54,10 @@ ${(props) => props.theme.breakpoints.up('lg')} {
     }
   `;
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <h1>Mui Styled Components</h1>
       <BoxOne>Hello Box One</BoxOne>
       <ParentBox>Mango</ParentBox>
-    </div>
+    </ThemeProvider>
   );
 }
